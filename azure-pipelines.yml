@@ -16,5 +16,5 @@ steps:
 - script: mvn clean install
   displayName: 'Building with maven'
 
-- script: java -jar target/JenkinsMaven-1.0-SNAPSHOT.jar
+- script: java -jar target/6AMavenApp-1.0-SNAPSHOT.jar
   displayName: 'Runs the Maven Application'
