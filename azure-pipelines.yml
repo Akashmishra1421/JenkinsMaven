@@ -7,13 +7,14 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  name: Default
 
 steps:
-- script: echo Hello, world!
+- script: echo First Azur Pipeline!
   displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- script: mvn clean install
+  displayName: 'Building with maven'
+
+- script: java -jar target/JenkinsMaven-1.0-SNAPSHOT.jar
+  displayName: 'Runs the Maven Application'
